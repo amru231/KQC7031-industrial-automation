@@ -1,13 +1,26 @@
-# KQC7031 — Optimal Control of an SIR Epidemic with an ICU Capacity Constraint
+# Optimal Control of an SIR Epidemic with an ICU Capacity Constraint
 
-Supplementary code and results for the **KQC7031 Industrial Automation** assignment.
+Supplementary code and results for the **KQC7031 Industrial Automation and
+Robotics** assignment — *Session 2025/2026, Semester 2*.
 
 This repository accompanies the submitted report. The report PDF is the primary
 deliverable; the material here provides the full source code, raw numerical
 results, and reproduction steps that do not fit inside a single PDF.
 
-> **Author:** amru231 · **Course:** KQC7031 Industrial Automation
-> **Submission snapshot:** 2026-06-21
+> Department of Electrical Engineering, Universiti Malaya · Submission snapshot: 2026-06-21
+
+## Group members
+
+| Name | Matric No. |
+|------|------------|
+| Muhammad Amru bin Mohamad Sharis | S2116804 |
+| Avienash a/l Shankar | U2103136/2 |
+| Chuah Wei Yang | 25066431 |
+| Guo Xuanzhuo | 24215841 |
+| Lau Sim Yee | 24220152 |
+
+Further details (methodology, derivations, discussion) are in the report:
+[`report/KQC7031_Assignment_Report.pdf`](report/KQC7031_Assignment_Report.pdf).
 
 ---
 
