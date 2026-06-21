@@ -7,14 +7,14 @@ This repository accompanies the submitted report. The report PDF is the primary
 deliverable; the material here provides the full source code, raw numerical
 results, and reproduction steps that do not fit inside a single PDF.
 
-> Department of Electrical Engineering, Universiti Malaya · Submission snapshot: 2026-06-21
+> Department of Electrical Engineering, Universiti Malaya 
 
 ## Group members
 
 | Name | Matric No. |
 |------|------------|
 | Muhammad Amru bin Mohamad Sharis | S2116804 |
-| Avienash a/l Shankar | U2103136/2 |
+| Avienash A/L Shankar | U2103136/2 |
 | Chuah Wei Yang | 25066431 |
 | Guo Xuanzhuo | 24215841 |
 | Lau Sim Yee | 24220152 |
