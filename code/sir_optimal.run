@@ -1,0 +1,78 @@
+# ===========================================================
+
+# AMPL Run Script for Case I and Case II
+
+# =========================================================
+
+model sir_optimal.mod;
+
+data sir_optimal.dat;
+
+# Specify the nonlinear solver (IPOPT is recommended for solving optimal control problems)
+
+option solver ipopt;
+
+# ---------------------------------------------------------
+
+# CASE I: Solving without state constraints
+
+# ---------------------------------------------------------
+
+printf "=========================================\n";
+
+printf "Solving Case I: Without ICU Constraint...\n";
+
+printf "===========================================\n";
+
+drop icu_bound; # Remove ICU constraint
+
+solve;
+
+printf "Case I objective: Total_Cost J = %.6f\n", Total_Cost;
+
+# Write Case I results to CSV file
+
+printf "time,s,i,v,p_s,p_i,phi\n" > case1_results.csv;
+
+for {t in TIME_CONTROL} {
+
+printf "%f,%f,%f,%f,%f,%f,%f\n",
+
+t*dt, s[t], i[t], v[t], eq_s[t].dual, eq_i[t].dual, (lambda_v - eq_s[t].dual * s[t]) >> case1_results.csv;
+
+}
+# Final value supplementation at terminal time
+
+printf "%f,%f,%f,0.0,0.0,0.0,%f\n", T, s[N], i[N], lambda_v >> case1_results.csv;
+
+# ---------------------------------------------------------
+
+# CASE II: Enabling State Constraint Solving
+
+# ---------------------------------------------------------
+
+printf "\n==========================================\n";
+
+printf "Solving Case II: With ICU Constraint...\n";
+
+printf "==========================================\n";
+
+restore icu_bound; # Restore and enable ICU constraints
+
+solve;
+
+printf "Case II objective: Total_Cost J = %.6f\n", Total_Cost;
+
+# Write Case II results to a CSV file
+printf "time,s,i,v,p_s,p_i,phi\n" > case2_results.csv;
+
+for {t in TIME_CONTROL} {
+printf "%f,%f,%f,%f,%f,%f,%f\n",
+
+t*dt, s[t], i[t], v[t], eq_s[t].dual, eq_i[t].dual, (lambda_v - eq_s[t].dual * s[t]) >> case2_results.csv;
+
+} # Supplement terminal time final values
+printf "%f,%f,%f,0.0,0.0,0.0,%f\n", T, s[N], i[N], lambda_v >> case2_results.csv;
+
+printf "\nSimulation successfully completed!\n";
+printf "Results saved to 'case1_results.csv' and 'case2_results.csv'.\n";

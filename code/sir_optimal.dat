@@ -1,0 +1,19 @@
+param N := 500;
+
+param T := 50;
+
+param beta := 0.3;
+
+param gamma := 0.1;
+
+param v_M := 0.05;
+
+param lambda_v := 2.0;
+
+param lambda_i := 15.0;
+
+param i_M := 0.04;  # Set to a stricter 0.04 for observation constraint triggering
+
+param s0 := 0.95;
+
+param i0 := 0.01;

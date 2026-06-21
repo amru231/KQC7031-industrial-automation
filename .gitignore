@@ -1,0 +1,14 @@
+# IDE
+.idea/
+.vscode/
+
+# OS / Windows download tags
+*Zone.Identifier
+
+# Python
+__pycache__/
+*.pyc
+
+# AMPL temp
+*.nl
+*.sol
